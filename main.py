@@ -8,6 +8,11 @@ from skill_routes import router as skill_router
 
 app = FastAPI()
 
+
+@app.get("/")
+def health():
+    return {"status": "ok"}
+
 # Configure CORS middleware
 app.add_middleware(
     CORSMiddleware,
